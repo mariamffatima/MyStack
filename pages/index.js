@@ -115,17 +115,34 @@ export default function Home() {
              <RiSettings5Fill className='m-1 text-2xl'/>
              </div>
              </div>
-             <div className='w-[49.625rem] h-screen flex flex-shrink-0 bg-[#ffe0e2] drop-shadow-md shadow-md shadow-gray-800'>
-          <div className='w-[23.0625rem] ml-4 mt-4 h-screen flex flex-shrink-0 bg-[#f3f3f3]'>
-            <p className='w-[11rem] h-[1.7rem] flex flex-shrink-0 font-bold m-2'>To Do List</p>
-            <ul className='flex flex-col justify-center flex-shrink-0'>
-              <li className=''><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"/>
-<label for="vehicle1"> Watch 1 design masterclass</label></li>
-              
-            </ul>
+             <div className='w-[49.625rem] h-[24rem] flex flex-shrink-0 bg-[#ffe0e2] drop-shadow-md shadow-md shadow-gray-800'>
+          <div className='w-[23.0625rem] ml-4 mt-4 flex flex-shrink-0 bg-[#f3f3f3] flex-col'>
+            <p className='w-[11rem] h-[1.7rem] flex flex-shrink-0 font-bold m-2 px-4 bg-[#fcfcfc]'>To Do List</p>
+            <p className='px-4'>design class</p>
           </div>
-          <div className='w-[23.0625rem] ml-3 mt-4 h-screen flex flex-shrink-0 bg-[#f3f3f3]'>
-            <p className=''></p>
+          <div className='w-[23.0625rem] ml-3 mt-4  flex flex-shrink-0 flex-col bg-[#f3f3f3]'>
+            <span className='w-[20.59rem] h-[8.33rem] ml-5 mt-4 bg-[#fcfcfc] px-3 py-2'>Add description</span>
+            <span className='flex flex-row px-4 py-2' >Priority
+              <ul className='flex flex-row'>
+                <li className='px-4'>Low </li>
+                <li className='px-4'>Medium</li>
+                <li className='px-4'>High</li>
+              </ul>
+            </span>
+           
+            <span className='flex flex-row px-4 py-2' >Repeat every
+              <ul className='flex flex-row px-2'>
+                <li className='px-2'>2 </li>
+                <li className='px-2'>Weeks</li>
+              </ul>
+            </span>
+            <span className='flex flex-row px-4 py-2' >Add attachment
+            </span>
+            <span className='flex flex-row px-4 py-2' >Add location
+            </span>
+            <span className='flex flex-row px-4 py-2' >Make habit
+            </span>
+            <span className='bg-[#fcfcfc] ml-4 w-[20.5rem] h-[3.19rem] px-3 py-2'> Add tags like exercise, work, etc.</span>
           </div>
         </div>
 
