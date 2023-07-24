@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+
 const FileUploadForm = () => {
   const [selectedFile, setSelectedFile] = useState(null);
 
@@ -14,8 +15,8 @@ const FileUploadForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="file" onChange={handleFileChange} 
-/>    </form>
+      <input type="file" onChange={handleFileChange} />
+    </form>
   );
 };
 
