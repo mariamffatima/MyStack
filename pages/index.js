@@ -65,7 +65,7 @@ function SearchBar() {
 }
 export default function Home() {
   return (
-      <div className='w-screen h-screen'>
+      <div className='w-screen h-screen text-black'>
         <div className='w-[14rem] h-screen flex flex-shrink-0'>
          <div className=' text-sm md:text-xl flex flex-col bg-[#F4C9CB] drop-shadow-md shadow-md shadow-gray-400'>
              <div className='p-4 px-6 py-4 font-bold text-xl flex row hover:cursor-default'>
@@ -142,7 +142,7 @@ export default function Home() {
               </radio>
             </div>
             <div className='flex flex-col  px-[1.25rem] py-[0.5rem] font-bold' >
-              <span className='text-lg'>Add attachment</span>
+              <span className='text-lg text-black'>Add attachment</span>
               <span className='text-lg text-[#e8b4b8] '> <FileUploadForm /></span>
             </div>
             <div className='flex flex-row px-[1.25rem] py-[0.5rem] font-bold text-lg space-x-2 mr-2 ' >
