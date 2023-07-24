@@ -8,6 +8,8 @@ import {BsBell,BsWindowSidebar, BsQuestionCircle, BsFillBellFill} from 'react-ic
 import{SlCalender, SlSettings}from 'react-icons/sl'
 import {FaSearch} from 'react-icons/fa'
 import {RiSettings5Fill} from 'react-icons/ri'
+import {SlOptions} from 'react-icons/sl'
+import FileUploadForm from './components/FileUploadForm'
 import React, { useState, useEffect } from 'react';
 
 const inter = Inter({ subsets: ['latin'] })
@@ -65,7 +67,7 @@ export default function Home() {
   return (
       <div className='w-screen h-screen'>
         <div className='w-[14rem] h-screen flex flex-shrink-0'>
-         <div className=' text-sm md:text-xl flex flex-col bg-[#F4C9CB] drop-shadow-md shadow-md shadow-[#0000001C]'>
+         <div className=' text-sm md:text-xl flex flex-col bg-[#F4C9CB] drop-shadow-md shadow-md shadow-gray-400'>
              <div className='p-4 px-6 py-4 font-bold text-xl flex row hover:cursor-default'>
              <PiCodesandboxLogoLight className='flex mt-1 m-2 text-2xl'/>
           <p>My Stack</p>
@@ -115,37 +117,57 @@ export default function Home() {
              <RiSettings5Fill className='m-1 text-2xl'/>
              </div>
              </div>
-             <div className='w-[49.625rem] h-[24rem] flex flex-shrink-0 bg-[#ffe0e2] drop-shadow-md shadow-md shadow-gray-800'>
-          <div className='w-[23.0625rem] ml-4 mt-4 flex flex-shrink-0 bg-[#f3f3f3] flex-col'>
-            <p className='w-[11rem] h-[1.7rem] flex flex-shrink-0 font-bold m-2 px-4 bg-[#fcfcfc]'>To Do List</p>
+             <div className='w-[49.625rem] h-[40.125rem] flex flex-shrink-0 bg-[#ffe0e2] drop-shadow-md shadow-md rounded-lg shadow-gray-400'>
+          <div className='w-[23.0625rem] ml-4 mt-4  h-[38.125rem] flex flex-shrink-0 bg-[#f3f3f3] rounded-lg flex-col'>
+            <p className='w-[11rem] h-[1.7rem] flex flex-shrink-0 font-bold m-2 px-4 '>To Do List</p>
             <p className='px-4'>design class</p>
           </div>
-          <div className='w-[23.0625rem] ml-3 mt-4  flex flex-shrink-0 flex-col bg-[#f3f3f3]'>
-            <span className='w-[20.59rem] h-[8.33rem] ml-5 mt-4 bg-[#fcfcfc] px-3 py-2'>Add description</span>
-            <span className='flex flex-row px-4 py-2' >Priority
-              <ul className='flex flex-row'>
-                <li className='px-4'>Low </li>
-                <li className='px-4'>Medium</li>
-                <li className='px-4'>High</li>
-              </ul>
+
+          <div className='w-[23.0625rem] ml-3 mt-4 h-[38.125rem] flex flex-shrink-0 flex-col rounded-lg bg-[#f3f3f3]'>
+            <span className='w-[20.59rem] h-[8.33rem] ml-5 mt-4 bg-[#fcfcfc] rounded-lg px-3 py-2'>Add description</span>
+            <div className='flex flex-row px-[1.25rem] py-[0.5rem] font-bold' >
+              <span className='text-lg mr-2'>Priority</span>
+              <radio className='flex flex-row text-md space-x-2'>
+                <button className='px-[1rem] flex justify-center items-center gap-[0.625rem] border-2 rounded-lg border-green-600 text-green-600 focus:text-[#fcfcfc] focus:bg-green-600 '>Low </button>
+                <button className='px-[1rem] flex justify-center items-center gap-[0.625rem] border-2 rounded-lg border-yellow-400 text-yellow-400  focus:text-[#fcfcfc] focus:bg-yellow-400'>Medium</button>
+                <button className='px-[1rem] flex justify-center items-center gap-[0.625rem] border-2 rounded-lg border-red-600 text-red-600  focus:text-[#fcfcfc] focus:bg-red-600'>High</button>
+              </radio>
+            </div>
+           <div className='flex flex-row px-[1.25rem] py-[0.5rem] font-bold'>
+            <span className='flex flex-row text-lg space-x-2 mr-2' >Repeat every </span>
+            <radio className='flex flex-row text-md space-x-2'>
+                <button className='px-[1rem] flex justify-center items-center gap-[0.625rem] border-2 rounded-lg border-[#e8b4b8] bg-[#e8b4b8] text-[#fcfcfc] focus:text-[#e8b4b8] focus:bg-[#fcfcfc] '>2 </button>
+                <button className='px-[1rem] flex justify-center items-center gap-[0.625rem] border-2 rounded-lg border-[#e8b4b8] bg-[#e8b4b8] text-[#fcfcfc] focus:text-[#e8b4b8] focus:bg-[#fcfcfc]'>weeks</button>
+
+              </radio>
+            </div>
+            <div className='flex flex-col  px-[1.25rem] py-[0.5rem] font-bold' >
+              <span className='text-lg'>Add attachment</span>
+              <span className='text-lg text-[#e8b4b8] '> <FileUploadForm /></span>
+            </div>
+            <div className='flex flex-row px-[1.25rem] py-[0.5rem] font-bold text-lg space-x-2 mr-2 ' >
+              Add location
+            </div>
+            <span className='flex flex-row px-[1.25rem] py-[0.5rem] font-bold text-lg space-x-2 mr-2 ' >Make habit
             </span>
-           
-            <span className='flex flex-row px-4 py-2' >Repeat every
-              <ul className='flex flex-row px-2'>
-                <li className='px-2'>2 </li>
-                <li className='px-2'>Weeks</li>
-              </ul>
-            </span>
-            <span className='flex flex-row px-4 py-2' >Add attachment
-            </span>
-            <span className='flex flex-row px-4 py-2' >Add location
-            </span>
-            <span className='flex flex-row px-4 py-2' >Make habit
-            </span>
-            <span className='bg-[#fcfcfc] ml-4 w-[20.5rem] h-[3.19rem] px-3 py-2'> Add tags like exercise, work, etc.</span>
+            <span className='bg-[#fcfcfc] ml-4 w-[20.5rem] h-[3.19rem] px-3 py-2 rounded-lg'> Add tags like exercise, work, etc.</span>
           </div>
         </div>
-
+        
+        <div className='absolute ml-[52rem] flex flex-shrink-0 flex-col w-[22.43rem] mt-[5.5rem] h-[40.125rem] rounded-lg bg-[#f3f3f3]'>
+          <span className='flex justify-center px-4 mt-4 font-bold text-xl'>Qoute</span>
+          <span className='w-[20.59rem] h-[14.2rem] ml-4 mt-4 py-2 bg-[#fcfcfc] rounded-lg'>
+            <div className='px-4 text-lg flex justify-end'><SlOptions/></div>
+           <div className='ml-2 mr-2 px-1 py-1 flex justify-center'>We have three roles here on earth: to learn, to love, and to live. When we stop learning,
+            we start to stagnate and die. When we stop loving,
+            we lose our sense of purpose and become self-centered.
+            When we limit our living,
+            we deny the world the benefits of our talents.
+            <br></br>
+               Jim Cathcart, The Acorn Principle
+            </div>
+          </span>
+        </div>
         </div>
 
         </div>
