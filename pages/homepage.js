@@ -13,14 +13,6 @@ import { useState } from 'react';
 
 const inter = Inter({ subsets: ['latin'] })
 
-const HomePage = () => {
-    return (
-      <div className="h-screen flex justify-center items-center bg-gray-100">
-        <h1 className="text-4xl font-bold">Welcome to the Home Page!</h1>
-      </div>
-    );
-  }; 
-
 function SearchBar() {
   const [inputValue, setInputValue] = useState('');
 
@@ -44,12 +36,11 @@ function SearchBar() {
 export default function homepage() {
   return (
     <div>
-             <div className='felx w-screen h-screen text-black bg-[#fcfcfc]'>
-        < SideMenu/>
-        <div className='absolute top-0 ml-[16rem] flex flex-col'>
+        <div className='felx w-screen h-screen text-black bg-[#fcfcfc]'>
+            < SideMenu/>
+        <div className='absolute top-0 ml-[18rem] flex flex-col'>
       <div className='flex flex-row' >
         <div className='px-2 my-2 text-xl md:text-2xl text-gray-700  '>Summer Coding Challenge</div>
-       <div className=''></div>
         <div className='flex flex-row  justify-end '>
            <div className='text-2xl md:text-3xl m-2 w-[1.25rem] h-[1.24975rem]'> 
            <BsBell />

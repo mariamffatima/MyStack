@@ -5,9 +5,7 @@ import { RxDashboard } from 'react-icons/rx';
 import { MdLogout } from 'react-icons/md';
 import { BsWindowSidebar } from 'react-icons/bs';
 import { SlSettings } from 'react-icons/sl';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
-import loginpage from '@/pages/loginpage';
 
 export default function SideMenu() {
   const router = useRouter();
@@ -43,9 +41,11 @@ export default function SideMenu() {
                 Settings
               </li>
             </ul>
-            <div>
+
+          </div>
+          <div className='absolute  bottom-0 p-6 flex justify-center'>
               <button
-                className='flex m-4 p-2 px-2 py-4 text-xl border justify-center mt-96 text-black hover:cursor-pointer hover:scale-100 hover:bg-[#fcfcfc]'
+                className='flex p-4 ml-8 text-xl border justify-center text-black hover:cursor-pointer hover:scale-100 hover:bg-[#fcfcfc]'
                 onClick={handleLogout}
               >
                 <MdLogout className='flex mt-1 m-2 text-2xl' />
@@ -53,8 +53,8 @@ export default function SideMenu() {
 
               </button>
             </div>
-          </div>
         </div>
+        
       </div>
     </div>
   );
