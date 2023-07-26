@@ -16,7 +16,7 @@ export default function SideMenu() {
 
   return (
     <div>
-      <div className='h-screen grid grid-cols-1 w-1/6 shadow-md shadow-gray-500  '>
+      <div className='h-screen grid grid-cols-1 w-[16rem] shadow-md shadow-gray-500  '>
         <div className=' text-sm md:text-xl flex flex-col bg-[#e8b4b8] drop-shadow-md '>
           <div className='p-4 px-6 py-4 font-bold text-xl flex row hover:cursor-default'>
             <PiCodesandboxLogoLight className='flex mt-1 m-2 text-2xl' />
