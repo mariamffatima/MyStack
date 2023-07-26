@@ -9,7 +9,7 @@ const SignUpPage = () => {
   const [password, setPassword] = useState('');
 
   const handleSignIn = () => {
-    router.push('/loginpage');
+    router.push('/LoginPage');
   };
 
   const handleSignUp = (e) => {
