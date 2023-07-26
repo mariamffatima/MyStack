@@ -14,7 +14,6 @@ const SignUpPage = () => {
 
   const handleSignUp = (e) => {
     e.preventDefault();
-    // Perform any sign-up actions here with the form fields' values
     router.push('/homepage');
   };
 

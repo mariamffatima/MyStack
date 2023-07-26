@@ -43,12 +43,12 @@ export default function SideMenu() {
             </ul>
 
           </div>
-          <div className='absolute  bottom-0 p-6 flex justify-center'>
+          <div className='absolute  bottom-0  p-6 flex justify-center'>
               <button
-                className='flex p-4 ml-8 text-xl border justify-center text-black hover:cursor-pointer hover:scale-100 hover:bg-[#fcfcfc]'
+                className='flex p-6 ml-8 text-xl border justify-center text-black hover:cursor-pointer hover:scale-100 hover:bg-[#fcfcfc]'
                 onClick={handleLogout}
               >
-                <MdLogout className='flex mt-1 m-2 text-2xl' />
+                <MdLogout className='flex mt-1  text-2xl' />
                 Logout
 
               </button>
