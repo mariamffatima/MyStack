@@ -11,13 +11,13 @@ export default function SideMenu() {
   const router = useRouter();
   
   const handleLogout = () => {
-    router.push('/loginpage');
+    router.push('/LoginPage');
   };
 
   return (
-    <div>
-      <div className='h-screen grid grid-cols-1 w-[16rem] shadow-md shadow-gray-500  '>
-        <div className=' text-sm md:text-xl flex flex-col bg-[#e8b4b8] drop-shadow-md '>
+    <div className='hidden h-screen md:grid grid-cols-1  w-[16rem]'>
+      <div className=' grid grid-cols-1 drop-shadow-md  shadow-md shadow-gray-500  '>
+        <div className=' text-xl flex flex-col bg-[#e8b4b8] '>
           <div className='p-4 px-6 py-4 font-bold text-xl flex row hover:cursor-default'>
             <PiCodesandboxLogoLight className='flex mt-1 m-2 text-2xl' />
             <p>My Stack</p>
