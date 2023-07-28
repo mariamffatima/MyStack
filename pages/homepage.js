@@ -93,8 +93,8 @@ export default function HomePage() {
                 )}
               </div>
 
-              <div className='flex items-center justify-end space-x-8 md:space-x-8'>
-                <div className='text-2xl  hidden items-center md:text-3xl w-[1.25rem] h-[1.24975rem]'>
+              <div className='flex items-center justify-end space-x-4 md:space-x-8'>
+                <div className='text-2xl  hidden md:inline items-center md:text-3xl w-[1.25rem] h-[1.24975rem]'>
                   <BsBell />
                     </div>
                   <div className='text-2xl items-center md:text-3xl w-[1.25rem] h-[1.24975rem]'>
