@@ -130,9 +130,9 @@ export default function HomePage() {
 
             <div className='px-2 py-2 flex grow space-x-2 m-1 overflow-hidden scrollbar-hidden'>
 
-                <div className='w-[80%] h-fit bg-[#FFD3D5] grid grid-cols-1 xl:grid-cols-2 drop-shadow-md shadow-md xl:space-x-8 p-4 rounded-lg shadow-gray-400'>
+                <div className='md:w-[100%] lg:w-[80%] h-fit bg-[#FFD3D5] grid grid-cols-1 xl:grid-cols-2 drop-shadow-md shadow-md xl:space-x-8 p-4 rounded-lg shadow-gray-400'>
               
-              <div className='w-[100%] ml-2 mt-2 flex flex-shrink-0 bg-[#f3f3f3] rounded-lg flex-col'>
+              <div className='md:w-[99%] lg:w-[100%] ml-2 mt-2 flex flex-shrink-0 bg-[#f3f3f3] rounded-lg flex-col'>
                 <div className='flex flex-shrink-0 text-xl text-black font-bold m-2 px-4 '>
                     To Do List</div>
                 <div className='text-black w-[90%] h-[40%] overflow-y-scroll scrollbar-none  ml-4 mt-2 py-2 bg-[#ffd3d5] space-y-3 rounded-lg'>
@@ -199,7 +199,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className='md:w-[90%] w-[100%] ml-2 mt-2 px-2 flex flex-col overflow-scroll scrollbar-none rounded-lg bg-[#f3f3f3]'>
+              <div className='md:w-[100%] lg:w-[90%] ml-2 mt-2 flex flex-shrink-0 flex-col overflow-scroll scrollbar-none rounded-lg bg-[#f3f3f3]'>
                 <span className='py-[0.5rem]'>
                   <textarea
                     className=' flex justify-center focus:border-none
@@ -210,13 +210,13 @@ export default function HomePage() {
                 <div className='flex flex-row px-[1.25rem] py-[0.5rem] font-bold'>
                   <span className='text-lg mr-2'>Priority</span>
                   <div className='flex flex-row text-md space-x-2'>
-                    <button className='px-[1rem] flex justify-center items-center gap-[0.625rem] border-2 rounded-lg border-green-600 text-green-600 focus:text-[#fcfcfc] focus:bg-green-600 '>
+                    <button className='px-[0.9rem] flex justify-center items-center gap-[0.625rem] border-2 rounded-lg border-green-600 text-green-600 focus:text-[#fcfcfc] focus:bg-green-600 '>
                       Low
                     </button>
-                    <button className='px-[1rem] flex justify-center items-center gap-[0.625rem] border-2 rounded-lg border-yellow-400 text-yellow-400  focus:text-[#fcfcfc] focus:bg-yellow-400'>
+                    <button className='px-[0.9rem] flex justify-center items-center gap-[0.625rem] border-2 rounded-lg border-yellow-400 text-yellow-400  focus:text-[#fcfcfc] focus:bg-yellow-400'>
                       Medium
                     </button>
-                    <button className='px-[1rem] flex justify-center items-center gap-[0.625rem] border-2 rounded-lg border-red-600 text-red-600  focus:text-[#fcfcfc] focus:bg-red-600'>
+                    <button className='px-[0.9rem] flex justify-center items-center gap-[0.625rem] border-2 rounded-lg border-red-600 text-red-600  focus:text-[#fcfcfc] focus:bg-red-600'>
                       High
                     </button>
                   </div>
@@ -235,7 +235,6 @@ export default function HomePage() {
                 <div className='flex flex-col  px-[1.25rem] py-[0.5rem] font-bold'>
                   <span className='text-lg text-black'>Add attachment</span>
                   <span className='text-lg text-[#e8b4b8] py-2'>
-                    {' '}
                     <FileUploadForm />
                   </span>
                 </div>
@@ -265,7 +264,7 @@ export default function HomePage() {
               </div>
                 </div>
 
-                <div className='hidden md:flex w-[30%] flex-col pb-8 h-fit rounded-lg bg-[#f3f3f3]'>
+                <div className='hidden md:inline w-[30%] flex-col px-4 pb-8 h-fit rounded-lg bg-[#f3f3f3]'>
                   <span className='flex justify-center text-black px-4 mt-4 font-bold text-xl'>Qoute</span>
                   <div className='m-2 py-2 w-[95%]  bg-[#fcfcfc] rounded-lg'>
                     <div className='px-4 text-lg flex justify-end text-black'>
