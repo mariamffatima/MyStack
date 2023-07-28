@@ -53,7 +53,7 @@ export default function HomePage() {
         <div className='hidden md:flex'><SideMenu /></div>
         <div className='md:absolute md:inline-block md:top-0 md:ml-[16rem] flex flex-col'>
 
-          <div className='h-fit border-b-2 border-gray-400 flex flex-col w-full space-y-4 mb-2 px-4 sm:px-10 md:pt-5 pt-1'>
+          <div className='h-fit border-b-2 border-gray-400 flex flex-col w-full space-y-2 mb-2 px-4 sm:px-10 md:pt-4 pt-1'>
               
              <div className='flex justify-between'>
 
@@ -93,7 +93,7 @@ export default function HomePage() {
                 )}
               </div>
 
-              <div className='flex items-center justify-end space-x-4 md:space-x-8'>
+              <div className='flex items-center justify-end space-x-8 md:space-x-8'>
                 <div className='text-2xl  hidden items-center md:text-3xl w-[1.25rem] h-[1.24975rem]'>
                   <BsBell />
                     </div>
@@ -109,7 +109,7 @@ export default function HomePage() {
 
              </div>
 
-            <div className='sm:ps-2 grid grid-cols-2 items-baseline'>
+            <div className='sm:ps-1 grid grid-cols-2 items-baseline'>
             <div className='grid grid-cols-2 justify-between'>
               <div className='flex font-medium items-center space-x-2 w-fit h-hull px-2 '>
                 <SlCalender className='m-1 text-lg md:text-xl' />
@@ -128,7 +128,7 @@ export default function HomePage() {
             </div>
 
 
-            <div className='px-3 py-3 flex grow space-x-4 m-1 overflow-hidden scrollbar-hidden'>
+            <div className='px-2 py-2 flex grow space-x-2 m-1 overflow-hidden scrollbar-hidden'>
 
                 <div className='w-[80%] h-fit bg-[#FFD3D5] grid grid-cols-1 xl:grid-cols-2 drop-shadow-md shadow-md xl:space-x-8 p-4 rounded-lg shadow-gray-400'>
               
@@ -199,11 +199,11 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className='w-3.5/4 ml-2 mt-2  flex flex-col overflow-scroll scrollbar-none rounded-lg bg-[#f3f3f3]'>
-                <span className=''>
+              <div className='md:w-[90%] w-[100%] ml-2 mt-2 px-2 flex flex-col overflow-scroll scrollbar-none rounded-lg bg-[#f3f3f3]'>
+                <span className='py-[0.5rem]'>
                   <textarea
                     className=' flex justify-center focus:border-none
-                    w-[90%] h-[70%] ml-4 mt-4 p-3 overflow-scroll scrollbar-none text-black border-gray-600 bg-[#fcfcfc] rounded-lg '
+                    w-[95%] h-[70%] ml-4 mt-4 p-3 overflow-scroll scrollbar-none text-black border-gray-600 bg-[#fcfcfc] rounded-lg '
                     placeholder='Add description'
                   ></textarea>
                 </span>
@@ -251,21 +251,21 @@ export default function HomePage() {
                     <ToggleButton />
                   </span>
                 </div>
-                <span className='text-gray-700'>
-                  <input
-                    type='text'
+                <span className='py-[0.5rem]'>
+                  <textarea
+                    className=' flex justify-center focus:border-none
+                    w-[95%] h-[50%] ml-4 mt-4 p-3 overflow-scroll scrollbar-none text-black border-gray-600 bg-[#fcfcfc] rounded-lg '
                     placeholder='Add tags like exercise, work, etc. '
-                    className='bg-[#fcfcfc] ml-4 w-[20.5rem] h-[3.19rem] px-3 py-2 rounded-lg '
-                  />
+                  ></textarea>
                 </span>
-                <div className='text-black p-3 flex justify-end m-2'>
+                <div className='text-black flex justify-end m-1'>
                     <button className='  gap-[0.625rem] p-1.5 border-2 rounded-lg border-gray-400 hover:focus:bg-[#e8b4b8] focus:text-black bg-[#f3f3f3] flex justify-center items-center '>
                         Save Task</button>
                  </div>
               </div>
                 </div>
 
-                <div className='w-[30%] flex-col pb-8 h-fit rounded-lg bg-[#f3f3f3]'>
+                <div className='hidden md:flex w-[30%] flex-col pb-8 h-fit rounded-lg bg-[#f3f3f3]'>
                   <span className='flex justify-center text-black px-4 mt-4 font-bold text-xl'>Qoute</span>
                   <div className='m-2 py-2 w-[95%]  bg-[#fcfcfc] rounded-lg'>
                     <div className='px-4 text-lg flex justify-end text-black'>

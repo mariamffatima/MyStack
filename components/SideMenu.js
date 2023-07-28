@@ -15,7 +15,7 @@ export default function SideMenu() {
   };
 
   return (
-    <div className='hidden h-screen md:grid grid-cols-1  w-[16rem]'>
+    <div className='hidden h-screen md:grid grid-cols-1 sm:w-[24%] md:w-[16.65%]'>
       <div className=' grid grid-cols-1 drop-shadow-md  shadow-md shadow-gray-500  '>
         <div className=' text-xl flex flex-col bg-[#e8b4b8] '>
           <div className='p-4 px-6 py-4 font-bold text-xl flex row hover:cursor-default'>
