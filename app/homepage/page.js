@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
@@ -7,10 +8,10 @@ import { FaSearch } from 'react-icons/fa';
 import { GrLocation } from 'react-icons/gr';
 import { RiSettings5Fill } from 'react-icons/ri';
 import { SlOptions } from 'react-icons/sl';
-import FileUploadForm from '../components/FileUploadForm';
-import { useRouter } from 'next/router';
-import SideMenu from '../components/SideMenu';
-import ToggleButton from '../components/ToggleButton';
+import FileUploadForm from '@/components/FileUploadform/FileUploadForm';
+import { useRouter } from 'next/navigation';
+import SideMenu from '@/components/SideMenu/SideMenu';
+import ToggleButton from '@/components/ToggleButton/ToggleButton';
 
 const inter = Inter({ subsets: ['latin'] });
 
