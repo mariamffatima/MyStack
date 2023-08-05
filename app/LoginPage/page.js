@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 
 const LoginPage = () => {
   const router = useRouter();
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSignIn = (e) => {
@@ -23,14 +23,14 @@ const LoginPage = () => {
         <form onSubmit={handleSignIn}>
           <div className="mb-4">
             <label htmlFor="username" className="block text-gray-700 font-bold mb-2">
-              Username:
+              Email:
             </label>
             <input
-              type="text"
-              id="username"
-              name="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              type="email"
+              id="email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full px-3 py-2 border rounded"
               required
             />
