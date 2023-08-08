@@ -1,6 +1,10 @@
 "use client"
+import { signIn, signOut, useSession } from "next-auth/react";
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import NextAuth from 'next-auth/next';
+import {FcGoogle} from 'react-icons/fc'
+import {BsFacebook} from 'react-icons/bs'
 
 const LoginPage = () => {
   const router = useRouter();
@@ -56,10 +60,11 @@ const LoginPage = () => {
             Sign In
           </button>
         </form>
+        <NextAuth/>
         <p className="mt-4 text-gray-600">
           Do not have an account?
           <a
-            className="text-[#d3989d] hover:underline"
+            className="text-[#d3989d] hover:underline cursor-pointer"
             onClick={handleSignUp}
           >
             Sign Up
@@ -67,7 +72,10 @@ const LoginPage = () => {
         </p>
         <div className='grid grid-cols-2 flex-row'>
           <div className=''></div>
-          <div></div>
+          <div className="flex flex-row text-xl md:text-2xl">
+            <span className=""><FcGoogle/></span>
+            <span className="text-blue-400"><BsFacebook/></span>
+          </div>
         </div>
       </div>
     </div>
