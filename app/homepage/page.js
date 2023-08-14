@@ -133,7 +133,7 @@ export default function HomePage() {
 
                 <div className='md:w-[100%] lg:w-[80%] h-fit bg-[#FFD3D5] grid grid-cols-1 xl:grid-cols-2 drop-shadow-md shadow-md xl:space-x-8 p-4 rounded-lg shadow-gray-400'>
               
-              <div className='md:w-[99%] lg:w-[100%] ml-2 mt-2 flex flex-shrink-0 bg-[#f3f3f3] rounded-lg flex-col'>
+              <div className='md:w-[99%] lg:w-[100%] ml-1 mt-1 flex flex-shrink-0 bg-[#f3f3f3] rounded-lg flex-col'>
                 <div className='flex flex-shrink-0 text-xl text-black font-bold m-2 px-4 '>
                     To Do List</div>
                 <div className='text-black w-[90%] h-[40%] overflow-y-scroll scrollbar-none  ml-4 mt-2 py-2 bg-[#ffd3d5] space-y-3 rounded-lg'>
@@ -200,7 +200,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className='md:w-[100%] lg:w-[90%] ml-2 mt-2 flex flex-shrink-0 flex-col overflow-scroll scrollbar-none rounded-lg bg-[#f3f3f3]'>
+              <div className='md:w-[100%] lg:w-[90%] ml-1 mt-1 flex flex-shrink-0 flex-col overflow-scroll scrollbar-none rounded-lg bg-[#f3f3f3]'>
                 <span className='py-[0.5rem]'>
                   <textarea
                     className=' flex justify-center focus:border-none
