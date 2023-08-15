@@ -13,9 +13,36 @@ const SignUpPage = () => {
     router.push('/LoginPage');
   };
 
-  const handleSignUp = (e) => {
+  const handleSignUp = async (e) => {
     e.preventDefault();
-    router.push('/homepage');
+
+    const userData = {
+      firstName,
+      lastName,
+      email,
+      password,
+    };
+
+    try {
+      const response = await fetch('/api/adduser', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData),
+      });
+
+      if (response.ok) {
+        // User added successfully
+        console.log('User added successfully');
+        router.push('/homepage'); // Redirect to homepage on success
+      } else {
+        // Error adding user
+        console.error('Error adding user');
+      }
+    } catch (error) {
+      console.error('Error adding user:', error);
+    }
   };
 
   return (

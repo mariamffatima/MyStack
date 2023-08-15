@@ -1,12 +1,55 @@
 "use client"
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-
+import { SessionProvider, signIn, useSession } from 'next-auth/react';
 const LoginPage = () => {
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showButton, setShowButton] = useState("password");
+  const [showPass, setShowPass] = useState("show");
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const handleButtonClick = (buttonValue) => {
+    if (showPass == "show") setShowPass("hide");
+    else setShowPass("show");
+    setShowButton(buttonValue);
+  };
+  const changePage = () => {
+    router.push("/dashboard");
+  };
 
+  const handleSubmit = async (event) => {
+    setIsLoading(true);
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const credentials = {
+      email: formData.get('email'),
+      password: formData.get('password'),
+    };
+    
+    try {
+      const response = await fetch('/api/getuser', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(credentials),
+      });
+      
+      if (response.ok) {
+        changePage('/homepage'); 
+      } else {
+        setError(true);
+      }
+    } catch (error) {
+      setError(true);
+      console.log('Login error:', error);
+    }
+    setIsLoading(false);
+  };
+  
+ 
   const handleSignIn = (e) => {
     e.preventDefault();
     router.push('/homepage');
@@ -16,7 +59,11 @@ const LoginPage = () => {
     router.push('/signuppage');
   };
 
+
+  // You can now use the session object to check if the user is authenticated
+
   return (
+    <SessionProvider>
     <div className="flex justify-center items-center h-screen bg-[#F3F3F3] text-black">
       <div className="md:w-1/4 p-6 bg-[#fcfcfc] rounded shadow-md shadow-gray-300">
         <h2 className="text-2xl font-bold mb-4 text-black">Sign In</h2>
@@ -71,8 +118,8 @@ const LoginPage = () => {
         </div>
       </div>
     </div>
+    </SessionProvider>
   );
 };
 
 export default LoginPage;
-

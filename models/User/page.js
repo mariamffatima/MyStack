@@ -23,13 +23,13 @@ const SignupSchema = new mongoose.Schema(
       unique:true
     },
     Fname: {
-        type: String,
-        require: true,
+      type: String,
+      require: true,
     },
     Lname: {
-        type: String,
-        require: true,
-      },
+      type: String,
+      require: true,
+    },
     password: {
       type: String,
       require: true,
@@ -39,7 +39,7 @@ const SignupSchema = new mongoose.Schema(
 );
 
 
+const Login = mongoose.models.Login || mongoose.model('Login', LoginSchema);
+const Signup = mongoose.models.Signup || mongoose.model('Signup', SignupSchema);
 
-const Login = models.Login || mongoose.model("Login", userSchema);
-const Signup = models.Signup || mongoose.model("Signup", SignupSchema);
-export { Login,Signup};
+export { Login, Signup };
