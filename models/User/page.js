@@ -1,6 +1,8 @@
+// "models/user/page.js"
+
 const mongoose = require('mongoose');
 
-const LoginSchema = new mongoose.Schema(
+const SigninSchema = new mongoose.Schema(
   {
     email: {
       type: String,
@@ -39,7 +41,7 @@ const SignupSchema = new mongoose.Schema(
 );
 
 
-const Login = mongoose.models.Login || mongoose.model('Login', LoginSchema);
+const Signin = mongoose.models.Signin || mongoose.model('Signin', SigninSchema);
 const Signup = mongoose.models.Signup || mongoose.model('Signup', SignupSchema);
 
-export { Login, Signup };
+export { Signin, Signup };

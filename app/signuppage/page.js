@@ -1,13 +1,21 @@
+// app/SignUpPage/page.js
 "use client"
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { FaGoogle, FaEye, FaEyeSlash } from "react-icons/fa";
+
+import { signUp } from "next-auth/react";
 
 const SignUpPage = () => {
   const router = useRouter();
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+  });
 
   const handleSignIn = () => {
     router.push('/LoginPage');
@@ -16,40 +24,38 @@ const SignUpPage = () => {
   const handleSignUp = async (e) => {
     e.preventDefault();
 
-    const userData = {
-      firstName,
-      lastName,
-      email,
-      password,
-    };
-
     try {
-      const response = await fetch('/api/adduser', {
+      const response = await fetch('/api/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(userData),
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        // User added successfully
         console.log('User added successfully');
-        router.push('/homepage'); // Redirect to homepage on success
+        router.push('/homepage');
       } else {
-        // Error adding user
         console.error('Error adding user');
       }
     } catch (error) {
       console.error('Error adding user:', error);
     }
   };
+  const handleGoogleSignUp = async () => {
+    const response = await signUp("google");
+    if (response.ok) {
+      router.push("/homepage");
+    } else {
+      console.error("Error logging in with Google");
+    }
+  };
 
   return (
     <div className="flex justify-center items-center h-screen bg-[#F3F3F3] text-black">
-      <div className=" md:w-1/4 p-6 bg-[#fcfcfc] rounded shadow-md shadow-gray-300">
+      <div className="md:w-1/4 p-6 bg-[#fcfcfc] rounded shadow-md shadow-gray-300">
         <h2 className="text-2xl font-bold mb-4 text-black">Sign Up</h2>
-        <form onSubmit={handleSignUp}>
           <div className="mb-4">
             <label htmlFor="firstName" className="block text-gray-700 font-bold mb-2">
               First Name:
@@ -58,8 +64,8 @@ const SignUpPage = () => {
               type="text"
               id="firstName"
               name="firstName"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
+              value={formData.firstName}
+              onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
               className="w-full px-3 py-2 border rounded"
               required
             />
@@ -72,8 +78,8 @@ const SignUpPage = () => {
               type="text"
               id="lastName"
               name="lastName"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
+              value={formData.lastName}
+              onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
               className="w-full px-3 py-2 border rounded"
               required
             />
@@ -86,42 +92,58 @@ const SignUpPage = () => {
               type="email"
               id="email"
               name="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={formData.email}
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               className="w-full px-3 py-2 border rounded"
               required
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="password" className="block text-gray-700 font-bold mb-2">
-              Password:
-            </label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-3 py-2 border rounded"
-              required
-            />
-          </div>
+              <label htmlFor="password" className="block text-gray-700 font-bold mb-2">
+                Password:
+              </label>
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  id="password"
+                  name="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full px-3 py-2 border rounded"
+                  required
+                />
+                <span
+                  className="absolute right-3 top-1 justify-center translate-y-1/2 cursor-pointer"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? <FaEyeSlash /> : <FaEye />}
+                </span>
+              </div>
+            </div>
+            
           <button
-            type="submit"
-            className="w-full bg-[#FFD3D5] text-black font-bold py-2 px-4 rounded hover:bg-[#e8b4b8]"
+              type="button"
+              onClick={handleGoogleSignUp}
+              className="w-full my-1 bg-[#ffd3d5] text-black font-bold py-2 px-4 rounded focus:bg-[#e8b4b8] flex items-center justify-center"
+            >
+              <FaGoogle className="mr-2" /> Sign Up with Google
+            </button>
+          <button
+            type="button"
             onClick={handleSignUp}
+            className="w-full bg-[#FFD3D5] text-black font-bold py-2 px-4 rounded focus:bg-[#e8b4b8]"
           >
             Sign Up
           </button>
-        </form>
+        
         <p className="mt-4 text-gray-600">
-          Already have an account? 
+          Already have an account?{' '}
           <button
             type="button"
             className="text-[#d3989d] hover:underline hover:cursor-pointer"
             onClick={handleSignIn}
           >
-           Sign In
+            Sign In
           </button>
         </p>
       </div>
